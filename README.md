@@ -9,6 +9,7 @@ Out results are as follows:
 
 ## Trained Model Weights
 |Model | Link |
+|------|------|
 | Double Layered LSTM| [link](https://drive.google.com/file/d/1C-a2YQqUxMqf6yF8VavsxNUbEQM3CeAl/view?usp=sharing)|
 | Single Layered LSTM| [link](https://drive.google.com/file/d/1-0Yz8tDbFhNWOw5s_MfyKthl5KeM3dPm/view?usp=sharing)|
 
