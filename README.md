@@ -7,12 +7,16 @@ Our results are as follows:
 | :-: | :-: | :-: | :-: |  
 | Single Layered LSTM| 98.97% | 92.90% | 95.92% |
 | Double Layered LSTM| 99.04% | 92.07% | 96.25%|
+|  Motion Profile CNN| 95.85% | 90.18% | 92.83% |
+| RDI CNN| 93.4% | 86.22% | 90.33%|
 
 ## Trained Model Weights
 |Model | Link |
 |:-:|:-:|
 | Double Layered LSTM| [link](https://drive.google.com/file/d/1LqAg3uJUbr7PCrzMvUmm2oR2whuKxrIx/view?usp=sharing)|
 | Single Layered LSTM| [link](https://drive.google.com/file/d/1NJBPmQ4js9qIlsxwmGVMKf6e3s8jP92z/view?usp=sharing)|
+| Motion Profile CNN | [link](https://drive.google.com/file/d/1tbymn4aTg3wk0RkxZGW_DQuOJKKmiXaX/view?usp=sharing)|
+| RDI CNN| [link](https://drive.google.com/file/d/1_3U11Ra8gQGq6OICYKGJCOmNCkZlbEuG/view?usp=sharing)|
 
 ## Data Links
 These links contain the test and train data dictionaries which are used in the code.
