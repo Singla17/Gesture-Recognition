@@ -6,3 +6,6 @@ Out results are as follows:
 | ----- | ----------- | ------------------ | ----------------------|  
 | Single Layered LSTM| 98.97% | 92.90% | 95.92% |
 | Double Layerd LSTM| 99.04% | 92.07% | 96.25%|
+
+
+Summary of our work can be found [here](./Summary.pdf).
