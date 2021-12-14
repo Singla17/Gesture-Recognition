@@ -7,8 +7,8 @@ Our results are as follows:
 | :-: | :-: | :-: | :-: |  
 | Single Layered LSTM| 98.97% | 92.90% | 95.92% |
 | Double Layered LSTM| 99.04% | 92.07% | 96.25%|
-|  Motion Profile CNN| 95.85% | 90.18% | 92.83% |
-| RDI CNN| 93.4% | 86.22% | 90.33%|
+|  Motion Profile CNN| 95.67% | 90.18% | 92.83% |
+| RDI CNN| 93.11% | 86.22% | 90.33%|
 
 ## Trained Model Weights
 |Model | Link |
