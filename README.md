@@ -26,5 +26,5 @@ These links contain the test and train data dictionaries which are used in the c
 | Leave One User Out|[link](https://drive.google.com/drive/folders/1xN2KNH036It4i8s24P4mx03KXxJU63V4?usp=sharing)|
 |Leave One Session Out|[link](https://drive.google.com/drive/folders/1kx5GJracmzuonKcEXGMBzuta9at07fdp?usp=sharing)|
 
-
+## For collaborators
 For our latest work and ideas please see: [link](https://docs.google.com/document/d/1KBKRwvfmCiFGuEpSl0T0_d1zByCDOmSTxXQvtcmzxGI/edit)
