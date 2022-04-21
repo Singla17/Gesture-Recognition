@@ -1,0 +1,11 @@
+{
+  "Number of frames" : 10,
+  "Number of chirps per frame": 128,
+  "Number of ADC samples per chirp": 256,
+  "Number of range bins": 256,
+  "Number of virtual antenna": 8,
+  "ChirpConfigs per chirp": 2,
+  "Number of real channels ": 8,
+  "Reference": "Chandragupta's Thesis Chapter-4"
+  
+}
