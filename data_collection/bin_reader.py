@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 This script converts .bin file data into a Sequence Radar data cubes in the format of numpy array
-The output numpy array is of the shape = [Number_of_frames x Number_of_chirps x Num of Rx x Number_of_adc_samples_per_chirp]
+The output numpy array is of the shape = [Number_of_frames x Num of Rx x Number of chirps per frame x Number_of_adc_samples_per_chirp]
 can be called using the format "python bin_reader --input_path=<Path to .bin file> --json_path=<Path to JSON file containing params> --save_path=<Path to save the npy format of data to>"
 
 @author: Somanshu
@@ -60,7 +60,7 @@ def read_bin_file (path, num_of_frames, num_of_chirp_per_frame, num_adc_sample_p
     """
     data_file = np.fromfile(path , dtype=np.int16)
     data = data_file.reshape (num_of_frames,num_of_chirp_per_frame,num_real_channel//2,num_adc_sample_per_chirp*2)
-    final_data = np.zeros((num_of_frames,num_of_chirp_per_frame,num_real_channel//2,num_adc_sample_per_chirp))
+    final_data = np.zeros((num_of_frames,num_of_chirp_per_frame,num_real_channel//2,num_adc_sample_per_chirp),dtype=complex)
     
     
     for i in range(num_of_frames):
@@ -69,12 +69,24 @@ def read_bin_file (path, num_of_frames, num_of_chirp_per_frame, num_adc_sample_p
                 for l in range(num_adc_sample_per_chirp):
                     
                     if l % 2 ==0:
-                        final_data[i][j][k][l] = data[i][j][k][2*l] + i*data[i][j][k][2*l+2]
+                        final_data[i][j][k][l] = data[i][j][k][2*l] + 1j*data[i][j][k][2*l+2]
                     else:
-                        final_data[i][j][k][l] = data[i][j][k][2*l-1] + i*data[i][j][k][2*l+1]
+                        final_data[i][j][k][l] = data[i][j][k][2*l-1] + 1j*data[i][j][k][2*l+1]
     
     
     return final_data
+
+
+def reshape_np(org_np,num_of_frames,num_real_channel,num_of_chirp_per_frame,num_adc_sample_per_chirp):
+    reshaped_data = np.zeros((num_of_frames,num_real_channel//2,num_of_chirp_per_frame,num_adc_sample_per_chirp),dtype=complex)
+    
+    for i in range(num_of_frames):
+        for j in range(num_real_channel//2):
+            for k in range(num_of_chirp_per_frame):
+                for l in range(num_adc_sample_per_chirp):
+                    reshaped_data[i][j][k][l] = org_np[i][k][j][l]
+                    
+    return reshaped_data
 
 if __name__ == "__main__":
     args = parse_args()
@@ -82,4 +94,5 @@ if __name__ == "__main__":
     json_file_path = args.json_path
     num_of_frames, num_of_chirp_per_frame, num_adc_sample_per_chirp, num_range_bin, num_virtual_antennas, chirp_config_per_chirp, num_real_channel, total_sample_per_frame = getparams(json_file_path)
     data_in_np = read_bin_file(inp_file_path, num_of_frames, num_of_chirp_per_frame, num_adc_sample_per_chirp, num_range_bin, num_virtual_antennas, chirp_config_per_chirp, num_real_channel, total_sample_per_frame)
+    data_in_np=reshape_np(data_in_np,num_of_frames,num_real_channel,num_of_chirp_per_frame,num_adc_sample_per_chirp)
     np.save(args.save_path, data_in_np)
