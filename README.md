@@ -1,7 +1,7 @@
 # Hand Gesture Recognition using Radar Imagery
 
 In this work we have used [Soli Dataset](https://github.com/simonwsw/deep-soli), We have experiemented with CNN and LSTM architectures.    
-Summary of our work can be found [here](./Summary.pdf).    
+Summary of our work can be found [here](./Work Summary/).    
 Our results are as follows:
 | Model | 50-50 Split | Leave one user Out | Leave One Session Out |
 | :-: | :-: | :-: | :-: |  
